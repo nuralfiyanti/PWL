@@ -24,3 +24,7 @@ Route::get('/hello', function () {
 Route::get('/world', function () {
     return 'World';
 });
+
+Route::get('/about', function () {
+    return 'NIM : 244107020055 <br> Nama : Nur Alfiyanti';
+});
