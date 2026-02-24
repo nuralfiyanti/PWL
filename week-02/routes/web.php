@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\PageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,11 +21,6 @@ PRAKTIKUM 1 - ROUTING DASAR
 |--------------------------------------------------------------------------
 */
 
-// Route default (/) → menampilkan halaman utama
-Route::get('/', function () {
-    return 'Selamat Datang';
-});
-
 // Route /hello → menampilkan string "Hello World"
 Route::get('/hello', [WelcomeController::class, 'hello']);
 
@@ -32,12 +28,6 @@ Route::get('/hello', [WelcomeController::class, 'hello']);
 Route::get('/world', function () {
     return 'World';
 });
-
-// Route /about → menampilkan NIM dan Nama
-Route::get('/about', function () {
-    return 'NIM : 244107020055 <br> Nama : Nur Alfiyanti';
-});
-
 
 /*
 |--------------------------------------------------------------------------
@@ -54,12 +44,6 @@ Route::get('/user/{name}', function ($name) {
 Route::get('/posts/{post}/comments/{comment}', function ($postId, $commentId) {
     return 'Pos ke-'.$postId." Komentar ke-: ".$commentId;
 });
-
-// Route parameter artikel
-Route::get('/articles/{id}', function ($id) {
-    return 'Halaman Artikel dengan ID '.$id;
-});
-
 
 /*
 |--------------------------------------------------------------------------
@@ -121,3 +105,12 @@ Route::get('/here', function () {
 |--------------------------------------------------------------------------
 */
 Route::view('/welcome', 'welcome');
+
+/*
+|-------------------------------------------------------------------------- 
+| PRAKTIKUM 2 - PAGE CONTROLLER 
+|-------------------------------------------------------------------------- 
+*/
+Route::get('/', [PageController::class, 'index']);
+Route::get('/about', [PageController::class, 'about']);
+Route::get('/articles/{id}', [PageController::class, 'articles']);
