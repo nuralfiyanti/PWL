@@ -131,6 +131,4 @@ Route::resource('photos', PhotoController::class)->only(['index','show']);
 | PRAKTIKUM 3 - VIEW
 |-------------------------------------------------------------------------- 
 */
-Route::get('/greeting', function () {
-    return view('blog.hello', ['name' => 'Nur Alfiyanti']);
-});
+Route::get('/greeting', [WelcomeController::class, 'greeting']);
