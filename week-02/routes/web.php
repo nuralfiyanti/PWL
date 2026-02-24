@@ -76,7 +76,7 @@ Route::get('/user-optional/{name?}', function ($name = 'John') {
 
 /*
 |--------------------------------------------------------------------------
-| ROUTE NAME
+| PRAKTIKUM 1 -ROUTE NAME
 |--------------------------------------------------------------------------
 */
 
@@ -87,4 +87,22 @@ Route::get('/user/profile', function () {
 
 Route::get('/test-profile', function () {
     return route('profile');
+});
+
+/*
+|--------------------------------------------------------------------------
+| PRAKTIKUM 1 - ROUTE GROUP DAN ROUTE PREFIXES
+|--------------------------------------------------------------------------
+*/
+
+Route::prefix('admin')->group(function () {
+
+    Route::get('/user', function () {
+        return 'Halaman Admin User';
+    });
+
+    Route::get('/post', function () {
+        return 'Halaman Admin Post';
+    });
+
 });
