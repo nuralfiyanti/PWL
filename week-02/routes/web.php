@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\WelcomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,9 +26,7 @@ Route::get('/', function () {
 });
 
 // Route /hello → menampilkan string "Hello World"
-Route::get('/hello', function () {
-    return 'Hello World';
-});
+Route::get('/hello', [WelcomeController::class, 'hello']);
 
 // Route /world → menampilkan string "World"
 Route::get('/world', function () {
