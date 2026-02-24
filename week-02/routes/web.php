@@ -125,3 +125,12 @@ Route::get('/articles/{id}', ArticleController::class);
 |-------------------------------------------------------------------------- 
 */
 Route::resource('photos', PhotoController::class)->only(['index','show']);
+
+/*
+|-------------------------------------------------------------------------- 
+| PRAKTIKUM 3 - VIEW
+|-------------------------------------------------------------------------- 
+*/
+Route::get('/greeting', function () {
+    return view('hello', ['name' => 'Nur Alfiyanti']);
+});
