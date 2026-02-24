@@ -132,5 +132,5 @@ Route::resource('photos', PhotoController::class)->only(['index','show']);
 |-------------------------------------------------------------------------- 
 */
 Route::get('/greeting', function () {
-    return view('hello', ['name' => 'Nur Alfiyanti']);
+    return view('blog.hello', ['name' => 'Nur Alfiyanti']);
 });
