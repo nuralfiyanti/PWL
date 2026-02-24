@@ -115,3 +115,10 @@ Route::prefix('admin')->group(function () {
 Route::get('/here', function () {
     return redirect()->to(url('/hello'));
 });
+
+/*
+|--------------------------------------------------------------------------
+| PRAKTIKUM 1 - VIEW 
+|--------------------------------------------------------------------------
+*/
+Route::view('/welcome', 'welcome');
