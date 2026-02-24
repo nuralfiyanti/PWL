@@ -124,4 +124,4 @@ Route::get('/articles/{id}', ArticleController::class);
 | PRAKTIKUM 2 - RESOURCE CONTROLLER 
 |-------------------------------------------------------------------------- 
 */
-Route::resource('photos', PhotoController::class);
+Route::resource('photos', PhotoController::class)->only(['index','show']);
