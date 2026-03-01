@@ -21,6 +21,11 @@ class KategoriController extends Controller
         
         return 'Insert data SNK berhasil!'; */
 
-        
+        // UPDATE data SNK
+        $row = DB::table('m_kategori')
+            ->where('kategori_kode', 'SNK')
+            ->update(['kategori_nama' => 'Camilan']);
+    
+        return 'Update data berhasil. Jumlah data diupdate: ' . $row . ' baris';
     }
 }
