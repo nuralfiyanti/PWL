@@ -1,59 +1,195 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+#Tugas Jobsheet 3 - POS 
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Nama:Nur Alfiyanti 
+NIM: 244107020055 
+Kelas:TI - 2F
 
-## About Laravel
+Praktikum 1
+![alt text](<screenshoot/Screenshot 2026-03-01 205105.png>)
+![alt text](<screenshoot/Screenshot 2026-03-01 205105.png>) 
+![alt text](<screenshoot/Screenshot 2026-03-01 210640.png>) 
+![alt text](<screenshoot/Screenshot 2026-03-01 212911.png>) 
+![alt text](<screenshoot/Screenshot 2026-03-01 212946.png>) 
+![alt text](<screenshoot/Screenshot 2026-03-01 214840.png>) 
+![alt text](<screenshoot/Screenshot 2026-03-01 221456.png>) 
+![alt text](<screenshoot/Screenshot 2026-03-01 221517.png>) 
+![alt text](<screenshoot/Screenshot 2026-03-01 222717.png>) 
+![alt text](<screenshoot/Screenshot 2026-03-01 222744.png>) 
+![alt text](<screenshoot/Screenshot 2026-03-01 224226.png>) 
+![alt text](<screenshoot/Screenshot 2026-03-01 224324.png>) 
+![alt text](<screenshoot/Screenshot 2026-03-01 224441.png>) 
+![alt text](<screenshoot/Screenshot 2026-03-01 224513.png>) 
+![alt text](<screenshoot/Screenshot 2026-03-01 225511.png>) 
+![alt text](<screenshoot/Screenshot 2026-03-01 225534.png>) 
+![alt text](<screenshoot/Screenshot 2026-03-01 232800.png>) 
+![alt text](<screenshoot/Screenshot 2026-03-01 232812.png>) 
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Praktikum 2
+![alt text](<screenshoot/Screenshot 2026-03-01 232825.png>) 
+![alt text](<screenshoot/Screenshot 2026-03-01 234224.png>) 
+![alt text](<screenshoot/Screenshot 2026-03-01 234800.png>) 
+![alt text](<screenshoot/Screenshot 2026-03-01 235219.png>) 
+![alt text](<screenshoot/Screenshot 2026-03-01 235451.png>) 
+![alt text](<screenshoot/Screenshot 2026-03-01 235817.png>) 
+![alt text](<screenshoot/Screenshot 2026-03-02 000032.png>) 
+![alt text](<screenshoot/Screenshot 2026-03-02 000231.png>) 
+![alt text](<screenshoot/Screenshot 2026-03-02 000434.png>) 
+![alt text](<screenshoot/Screenshot 2026-03-02 000448.png>) 
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Praktikum 3
+![alt text](<screenshoot/Screenshot 2026-03-02 001612.png>) 
+![alt text](<screenshoot/Screenshot 2026-03-02 002253.png>) 
+![alt text](<screenshoot/Screenshot 2026-03-02 003513.png>) 
+![alt text](<screenshoot/Screenshot 2026-03-02 003617.png>) 
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Praktikum 4
+![alt text](<screenshoot/Screenshot 2026-03-02 003748.png>) 
+![alt text](<screenshoot/Screenshot 2026-03-02 011129.png>) 
+![alt text](<screenshoot/Screenshot 2026-03-02 011142.png>) 
+![alt text](<screenshoot/Screenshot 2026-03-02 013702.png>) 
+![alt text](<screenshoot/Screenshot 2026-03-02 013711.png>) 
+![alt text](<screenshoot/Screenshot 2026-03-02 015306.png>) 
+![alt text](<screenshoot/Screenshot 2026-03-02 015327.png>) 
+![alt text](<screenshoot/Screenshot 2026-03-02 022327.png>) 
 
-## Learning Laravel
+Praktikum 5
+![alt text](<screenshoot/Screenshot 2026-03-02 022344.png>) 
+![alt text](<screenshoot/Screenshot 2026-03-02 023506.png>) 
+![alt text](<screenshoot/Screenshot 2026-03-02 025127.png>) 
+![alt text](<screenshoot/Screenshot 2026-03-02 025429.png>) 
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+Praktikum 6
+![alt text](<screenshoot/Screenshot 2026-03-02 025737.png>) 
+![alt text](<screenshoot/Screenshot 2026-03-02 044249.png>)
+![alt text](<screenshoot/Screenshot 2026-03-02 101759.png>)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Jawaban Pertanyaan 
 
-## Laravel Sponsors
+1. Pada Praktikum 1 - Tahap 5, apakah fungsi dari APP_KEY pada file setting .env Laravel?
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Jawaban:
+APP_KEY berfungsi sebagai key enkripsi untuk mengamankan data sensitif seperti session dan cookie. Key ini digunakan Laravel untuk melakukan enkripsi/dekripsi data menggunakan cipher AES-256.
 
-### Premium Partners
+2. Pada Praktikum 1, bagaimana kita men-generate nilai untuk APP_KEY?
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+Jawaban:
+php artisan key:generate
 
-## Contributing
+Perintah ini akan menghasilkan random string 32 karakter yang akan otomatis terisi di file .env pada baris APP_KEY.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
+3. Pada Praktikum 2.1 - Tahap 1, secara default Laravel memiliki berapa file migrasi? 
+dan untuk apa saja file migrasi tersebut?
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Jawaban:
+Secara default Laravel memiliki 3 file migrasi:
 
-## Security Vulnerabilities
+0001_01_01_000000_create_users_table.php - Untuk membuat tabel users (data pengguna)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+0001_01_01_000001_create_cache_table.php - Untuk membuat tabel cache (penyimpanan cache)
 
-## License
+0001_01_01_000002_create_jobs_table.php - Untuk membuat tabel jobs (antrian job)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+4. Secara default, file migrasi terdapat kode $table->timestamps();, apa tujuan/output
+dari fungsi tersebut?
+
+Jawaban:
+Fungsi $table->timestamps() akan membuat 2 kolom:
+
+created_at (timestamp saat data dibuat)
+
+updated_at (timestamp saat data terakhir diupdate)
+
+Keduanya akan otomatis diisi oleh Laravel.
+
+5. Pada File Migrasi, terdapat fungsi $table->id(); Tipe data apa yang dihasilkan dari 
+fungsi tersebut?
+
+Jawaban:
+Fungsi $table->id() menghasilkan kolom dengan tipe data:
+
+MySQL: BIGINT UNSIGNED AUTO_INCREMENT
+
+PostgreSQL: BIGSERIAL (auto-increment integer)
+
+Kolom ini juga otomatis menjadi PRIMARY KEY.
+
+6. Apa bedanya hasil migrasi pada table m_level, antara menggunakan $table->id();
+dengan menggunakan $table->id('level_id'); ?
+
+Jawaban:
+$table->id() → Membuat kolom dengan nama id sebagai primary key auto-increment
+
+$table->id('level_id') → Membuat kolom dengan nama level_id sebagai primary key auto-increment
+
+Jadi perbedaannya hanya pada nama kolom yang dihasilkan.
+
+7. Pada migration, Fungsi ->unique() digunakan untuk apa?
+
+Jawaban:
+Fungsi ->unique() digunakan untuk menambahkan UNIQUE constraint pada kolom, sehingga nilai dalam kolom tersebut tidak boleh duplikat. Contoh: level_kode harus unik.
+
+
+8. Kenapa level_id di tabel m_user pake unsignedBigInteger, tapi di m_level pake id('level_id')?
+Ini tuh hubungannya sama relasi foreign key. Jadi:
+
+Di tabel m_level, level_id itu primary key (induknya), jadi pake id('level_id') biar auto-increment
+
+Di tabel m_user, level_id itu foreign key (anaknya), jadi harus pake tipe data yang sama persis, yaitu unsignedBigInteger
+
+Supaya mereka bisa "nyambung" pas direlasikan, tipe datanya harus cocok. Makanya pake unsignedBigInteger yang sama dengan hasil dari id().
+
+8. Pada Praktikum 2.2 - Tahap 2, kenapa kolom level_id pada tabel m_user
+menggunakan $tabel->unsignedBigInteger('level_id'), sedangkan kolom level_id
+pada tabel m_level menggunakan $tabel->id('level_id') ?
+
+Jawaban:
+m_level.level_id menggunakan id('level_id') → sebagai primary key (auto-increment)
+
+m_user.level_id menggunakan unsignedBigInteger('level_id') → sebagai foreign key yang merujuk ke m_level.level_id
+
+Keduanya harus memiliki tipe data yang sama agar bisa direlasikan. unsignedBigInteger digunakan karena primary key di PostgreSQL adalah BIGINT UNSIGNED.
+
+
+9. Pada Praktikum 3 - Tahap 6, apa tujuan dari Class Hash? dan apa maksud dari kode 
+program Hash::make('1234');?
+
+Jawaban:
+Class Hash berfungsi untuk melakukan enkripsi satu arah (hashing) pada password
+
+Hash::make('1234') adalah perintah untuk mengenkripsi string '1234' menjadi hash yang aman disimpan di database
+
+Ini penting untuk keamanan password user
+
+
+10. Pada Praktikum 4 - Tahap 3/5/7, pada query builder terdapat tanda tanya (?), apa 
+kegunaan dari tanda tanya (?) tersebut?
+
+Jawaban:
+Tanda tanya (?) adalah placeholder untuk binding parameter yang berfungsi mencegah SQL injection. Nilai sebenarnya akan diisi oleh array kedua. Contoh
+DB::insert('insert into m_level(level_kode) values(?)', ['CUS']);
+
+Tanda ? akan diganti dengan 'CUS' secara aman.
+
+11. Pada Praktikum 6 - Tahap 3, apa tujuan penulisan kode protected $table = 
+‘m_user’; dan protected $primaryKey = ‘user_id’; ? 
+
+Jawaban:
+protected $table = 'm_user'; → Memberitahu Eloquent bahwa model ini terhubung ke tabel m_user (bukan tabel users default)
+
+protected $primaryKey = 'user_id'; → Memberitahu Eloquent bahwa primary key tabel adalah user_id (bukan id default)
+
+
+12. Menurut kalian, lebih mudah menggunakan mana dalam melakukan operasi CRUD ke 
+database (DB Façade / Query Builder / Eloquent ORM) ? jelaskan
+
+Jawaban:
+Menurut saya, Eloquent ORM adalah yang paling mudah karena:
+
+Aspek	DB Facade	Query Builder	Eloquent ORM
+Penulisan kode	Raw SQL (rentan error)	Method chaining	OOP murni
+Keamanan	Manual binding	Otomatis	Otomatis
+Relasi	Join manual	Join manual	Mudah dengan relationship
+Readability	Sulit dibaca	Cukup jelas	Sangat jelas
+Kesimpulan: Eloquent ORM lebih intuitif karena setiap baris tabel direpresentasikan sebagai objek, sehingga kode lebih bersih, mudah dipahami, dan cepat dalam pengembangan aplikasi.
+
