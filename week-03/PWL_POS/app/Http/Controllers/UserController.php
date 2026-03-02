@@ -3,12 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\UserModel;
+use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
     public function index()
     {
-        $data = UserModel::all();
-        return view('user', ['data' => $data]);
+        // Ambil semua data dari tabel m_user
+        $user = UserModel::all();
+        
+        // Kirim data ke view
+        return view('user', ['data' => $user]);
     }
 }
