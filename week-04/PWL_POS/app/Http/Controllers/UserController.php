@@ -18,6 +18,8 @@ public function index()
             'level_id' => 2,
         ]
     );
+    
+    $user->save();
     return view('user', ['data' => $user]);
 }
 }
