@@ -136,3 +136,111 @@ Solusi: Gunakan HeidiSQL yang sudah tersedia di Laragon sebagai alternatif untuk
 5. User kedua tidak bisa login
 Solusi: Saat membuat user, gunakan bcrypt('password') untuk mengenkripsi password.
 
+
+
+## Jobsheet 2: CRUD Resource User dengan Filament v4
+
+### Langkah Praktikum
+
+### Langkah-langkah beserta bukti Screenshoot:
+**Langkah 1 – Membuat Resource User**
+Jalankan perintah berikut di terminal Laragon: `php artisan list`
+![alt text](<screenshoot/Screenshot 2026-03-26 000411.png>) 
+![alt text](<screenshoot/Screenshot 2026-03-26 000446.png>)
+
+Jalankan perintah berikut di terminal Laragon: `php artisan make:filament-resource User`
+Saat diminta, isi:
+- Attribute utama: `name`
+- Generate read-only page: `no`
+- Generate dari database: `no`
+Setelah berhasil, akan muncul folder baru di `app/Filament/Resources/UserResource.php`
+![alt text](<screenshoot/Screenshot 2026-03-26 143456.png>)
+![alt text](<screenshoot/Screenshot 2026-03-26 144101.png>)
+
+**Langkah 2 – Menjalankan Aplikasi**
+Jalankan server: `php artisan serve`
+Login dengan:
+- Email: admin@gmail.com
+- Password: 123456
+Sekarang akan muncul menu **Users** di sidebar.
+![alt text](<screenshoot/Screenshot 2026-03-26 144256.png>)
+Jika diklik user pada sidebar
+![text](<screenshoot/Screenshot 2026-03-26 144923.png>) 
+Jika diklik new user ( blm ada form inputnya)
+![text](<screenshoot/Screenshot 2026-03-26 145103.png>)
+
+**Langkah 3 – Membuat Form Input (Create & Edit)**
+Buka file `app/Filament/Resources/Schemas/UserForm.php`
+Modifikasi dan Tambahkan field berikut:
+![alt text](<screenshoot/Screenshot 2026-03-26 150943.png>)
+
+Refresh browser.
+Hasil:
+• Form Create User memiliki input Name, Email, Password
+• Password otomatis terenkripsi oleh Laravel
+![alt text](<screenshoot/Screenshot 2026-03-26 151015.png>)
+
+Coba inputan:
+![alt text](<screenshoot/Screenshot 2026-03-26 151046.png>)
+
+Cek pada DB
+![alt text](<screenshoot/Screenshot 2026-03-26 152416.png>)
+
+**Langkah 4 – Menampilkan Data pada Tabel**
+Buka file app/Filament/Resources/UserTable.php
+Tambahkan kolom:
+![alt text](<screenshoot/Screenshot 2026-03-26 175319.png>)
+
+Refresh browser.
+![alt text](<screenshoot/Screenshot 2026-03-26 175217.png>)
+
+**Langkah 5 - Mengganti Icon Menu Resource**
+Website resmi: Heroicons
+Buka file:
+• UserResource.php (Ubah property icon:
+• protected static string|BackedEnum|null $navigationIcon = 
+Heroicon::UserGroup;)
+![text](<screenshoot/Screenshot 2026-03-26 180553.png>) 
+
+Refresh browser → Icon berubah.
+Sesudah
+![text](<screenshoot/Screenshot 2026-03-26 180541.png>)
+
+
+### Analisis & Diskusi
+**1. Mengapa Filament dapat membuat CRUD tanpa banyak coding?**
+Menurut saya, Filament bisa membuat CRUD dengan sangat cepat karena menggunakan konsep Resource. Jadi kita cukup menjalankan satu perintah php artisan make:filament-resource User, maka Filament akan langsung membuat semua file yang diperlukan seperti halaman list, create, edit, dan konfigurasi form serta tabel.
+
+Kita sebagai developer tinggal mengatur field apa saja yang mau ditampilkan. Misalnya di form kita tambahkan TextInput::make('name') dan di tabel kita tambahkan TextColumn::make('name'). Filament sudah menyediakan komponen-komponen yang siap pakai, jadi kita tidak perlu membuat controller, view, atau menulis logika CRUD dari awal. Ini sangat membantu karena kita bisa fokus ke fitur utama aplikasi, bukan sibuk menulis kode yang itu-itu saja.
+
+**2. Apa perbedaan Form Schema dan Table Schema?**
+Dari yang saya pelajari, perbedaannya ada di fungsi masing-masing:
+
+Form Schema digunakan untuk halaman Create dan Edit. Di sini kita mengatur komponen input seperti text field, select dropdown, atau file upload. Contohnya seperti TextInput::make('name') yang akan menampilkan kolom input teks. Kita juga bisa menambahkan validasi seperti required() atau minLength() untuk memastikan data yang masuk sesuai.
+
+Table Schema digunakan untuk halaman List (tampilan data). Di sini kita mengatur kolom-kolom yang ingin ditampilkan dari database. Contohnya TextColumn::make('name') akan menampilkan data nama dari tabel. Kita juga bisa menambahkan fitur seperti searchable() agar kolom bisa dicari, atau sortable() agar bisa diurutkan.
+
+Singkatnya, Form Schema untuk input, Table Schema untuk output.
+
+**3. Bagaimana jika kita ingin menambahkan validasi email unik?**
+Untuk menambahkan validasi email unik, saya tinggal menambahkan method unique() di field email pada form. Caranya seperti ini:
+TextInput::make('email')
+    ->email()
+    ->required()
+    ->unique(table: 'users', column: 'email')
+Kode di atas akan memastikan bahwa email yang dimasukkan belum terdaftar di tabel users. Jika sudah ada, sistem akan menampilkan pesan error dan user tidak bisa menyimpan data.
+
+Kalau kita sedang mengedit data, kita perlu menambahkan ignoreRecord: true agar validasi tidak memeriksa email milik user itu sendiri. Jadi kodenya menjadi:
+->unique(table: 'users', column: 'email', ignoreRecord: true)
+
+**4. Mengapa password tidak perlu kita hash manual?**
+Dari yang saya alami, password tidak perlu di-hash manual karena Laravel sudah menanganinya secara otomatis. Di dalam model User.php ada kode seperti ini:
+protected $casts = [
+    'password' => 'hashed',
+];
+
+Fungsi dari kode tersebut adalah memberitahu Laravel bahwa kolom password harus di-hash setiap kali ada penyimpanan data. Jadi ketika saya mengisi form dan menekan tombol save, Filament akan mengirim data ke model User, dan Laravel akan otomatis mengenkripsi password dengan bcrypt sebelum disimpan ke database.
+
+Hal ini sangat membantu karena saya tidak perlu repot-repot menambahkan kode bcrypt() di setiap form. Cukup dengan menambahkan $casts di model, semuanya berjalan otomatis.
+
+
