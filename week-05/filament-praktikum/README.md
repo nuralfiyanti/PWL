@@ -243,4 +243,81 @@ Fungsi dari kode tersebut adalah memberitahu Laravel bahwa kolom password harus 
 
 Hal ini sangat membantu karena saya tidak perlu repot-repot menambahkan kode bcrypt() di setiap form. Cukup dengan menambahkan $casts di model, semuanya berjalan otomatis.
 
+### Tugas Praktikum
+1. Tambahkan validasi:
+    o Email harus unik
+    o Password minimal 6 karakter
+![alt text](<screenshoot/Screenshot 2026-03-29 040911.png>)
 
+saya telah membuat user baru dengan nama user2@gmail.com
+![text](<screenshoot/Screenshot 2026-03-29 033846.png>) 
+![alt text](<screenshoot/Screenshot 2026-03-29 035746.png>)
+
+saya mencoba login menggunakan admin@gmail.com dan menginputkan data ser2@gmail.com dan hasilnya failed sesuai dengan gambar berikut
+![alt text](<screenshoot/Screenshot 2026-03-29 045908.png>)
+
+2. Tambahkan kolom baru pada tabel:
+    o Created_at
+![text](<screenshoot/Screenshot 2026-03-29 044043.png>) 
+![text](<screenshoot/Screenshot 2026-03-29 044031.png>) 
+![text](<screenshoot/Screenshot 2026-03-29 043938.png>)
+
+3. Ganti icon dengan icon lain dari Heroicons
+![alt text](<screenshoot/Screenshot 2026-03-29 044607.png>)
+before:
+![alt text](<screenshoot/Screenshot 2026-03-29 035746.png>)
+after:
+![alt text](<screenshoot/Screenshot 2026-03-29 044910.png>)
+
+4. Buat laporan berisi:
+    o Screenshot halaman List
+    o Screenshot halaman Create
+    o Screenshot database
+
+
+#### 1. Halaman List User
+Tampilan tabel user dengan kolom **Name**, **Email**, dan **Created_at** (kolom tambahan dari tugas).
+![text](<screenshoot/Screenshot 2026-03-29 043938.png>)
+
+#### 2. Halaman Create User (Validasi Error)
+Saat membuat user baru dengan:
+- Email yang sudah ada (`admin@gmail.com`)
+- Password kurang dari 6 karakter (`123`)
+
+Maka akan muncul pesan error:
+- "The email has already been taken"
+- "The password must be at least 6 characters"
+![alt text](<screenshoot/Screenshot 2026-03-29 045908.png>)
+
+#### 3. Halaman Create User (Berhasil)
+Setelah mengisi data yang valid, user baru berhasil ditambahkan.
+![text](<screenshoot/Screenshot 2026-03-29 050641.png>)
+![text](<screenshoot/Screenshot 2026-03-29 050652.png>) 
+![text](<screenshoot/Screenshot 2026-03-29 050708.png>) 
+
+#### 4. Data User di Database
+Tabel users di database menampilkan data user yang telah ditambahkan.
+![alt text](<screenshoot/Screenshot 2026-03-29 051036.png>)
+
+#### 5. Icon Menu Berubah
+Icon menu Users di sidebar telah diganti dengan icon baru dari Heroicons.
+![alt text](<screenshoot/Screenshot 2026-03-29 044910.png>)
+
+### Kode Implementasi
+
+#### Validasi di `UserResource.php`
+
+```php
+TextInput::make('email')
+    ->email()
+    ->required()
+    ->unique(table: 'users', column: 'email') 
+    ->maxLength(255),
+
+TextInput::make('password')
+    ->password()
+    ->required()
+    ->minLength(6) 
+    ->maxLength(255),
+
+    
