@@ -320,20 +320,5 @@ TextInput::make('password')
     ->minLength(6) 
     ->maxLength(255),
 
-
-## Jobsheet 3: Migration, Model, Relasi & Resource Category
-
-### Langkah-langkah beserta Bukti Screenshoot
-
-**Langkah 1 – Membuat Model & Migration Category**
-
-Pertama, kita buat model Category beserta file migration-nya secara bersamaan menggunakan perintah artisan. Perintah `-m` akan otomatis membuat file migration.
-
-```bash
-php artisan make:model Category -m
-Perintah ini akan menghasilkan dua file:
-
-app/Models/Category.php (file model)
-
-database/migrations/xxxx_xx_xx_xxxxxx_create_categories_table.php (file migration)
-
+### Jobsheet 3: Membuat Migration, Model, Relasi & Resource Category
+### Langkah Praktikum 
