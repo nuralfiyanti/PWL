@@ -303,37 +303,101 @@ Tabel users di database menampilkan data user yang telah ditambahkan.
 Icon menu Users di sidebar telah diganti dengan icon baru dari Heroicons.
 ![alt text](<screenshoot/Screenshot 2026-03-29 044910.png>)
 
-### Kode Implementasi
+#
+### Jobsheet 3: Membuat Migration, Model, Relasi & Resource Category
 
-#### Validasi di `UserResource.php`
+### Langkah Praktikum 
 
-```php
-TextInput::make('email')
-    ->email()
-    ->required()
-    ->unique(table: 'users', column: 'email') 
-    ->maxLength(255),
+### Langkah-langkah beserta bukti Screenshoot:
 
-TextInput::make('password')
-    ->password()
-    ->required()
-    ->minLength(6) 
-    ->maxLength(255),
+1. Langkah 1 – Membuat Model & Migration Category
+Jalankan perintah:
+• php artisan make:model Category -m dan selanjutnya Mendesain Tabel Categories
+Buka file migration Category dan ubah menjadi:
+![alt text](<screenshoot/Screenshot 2026-04-08 133520.png>)
+![alt text](<screenshoot/Screenshot 2026-04-08 133703.png>)
+
+2.  Simpan file dan Jalankan migrasi:
+• php artisan migrate
+![alt text](<screenshoot/Screenshot 2026-04-08 133858.png>)
+
+3. Langkah 3 – Mengatur Model Category
+Buka file:
+• app/Models/Category.php
+![alt text](<screenshoot/Screenshot 2026-04-08 134030.png>)
+
+4. Langkah 4 – Generate Model Post
+• php artisan make:model Post -m
+![alt text](<Screenshot 2026-04-08 134135.png>)
+
+5. Langkah 5 – Mendesain Struktur Tabel Posts
+Edit migration Post menjadi:
+![alt text](<screenshoot/Screenshot 2026-04-08 134255.png>)
+
+6. Jalankan:
+• php artisan migrate
+![alt text](<screenshoot/Screenshot 2026-04-08 134320.png>)
+
+7. Buka:
+• app/Models/Post.php
+Tambahkan
+![alt text](<screenshoot/Screenshot 2026-04-08 134523.png>)
+
+8. Menggunakan Casting Laravel
+Karena beberapa field memiliki tipe khusus, tambahkan: ( pada models/Post.php )
+![alt text](<screenshoot/Screenshot 2026-04-08 144401.png>)
+
+9. Menambahkan Relasi ( pada model/Post.php )
+Tambahkan relasi ke Category:
+![alt text](<screenshoot/Screenshot 2026-04-08 144411.png>)
+
+10. G. Membuat Resource Category di Filament
+Karena kita akan menggunakan Category untuk relasi Post, maka kita buat resource-nya terlebih 
+dahulu.
+• php artisan make:filament-resource Category
+![alt text](<screenshoot/Screenshot 2026-04-08 160150.png>)
+
+11. Jalankan browser maka akan muncul pada sidebar categories :
+![alt text](<screenshoot/Screenshot 2026-04-08 172929.png>)
+
+12. Edit Form Category
+Buka:
+• CategoryForm.php
+Tambahkan:
+![alt text](<screenshoot/Screenshot 2026-04-08 174012.png>)
+
+13. Jalankan browser :
+Sebelum
+![alt text](<screenshoot/Screenshot 2026-04-08 174631.png>)
+ 
+Sesudah
+![alt text](<screenshoot/Screenshot 2026-04-08 174135.png>)
+
+14. Edit Table Category
+Buka:
+• CategoriesTable.php
+Tambahkan:
+![alt text](<screenshoot/Screenshot 2026-04-08 175539.png>)
+
+15. Jalankan browser
+![alt text](<screenshoot/Screenshot 2026-04-08 175714.png>)
+![alt text](<screenshoot/Screenshot 2026-04-08 202227.png>)
 
 
-## Jobsheet 3: Migration, Model, Relasi & Resource Category
+### Jawaban Analisis & Diskusi
+1. Mengapa kita perlu $fillable?
+$fillable melindungi aplikasi dari serangan dan memastikan hanya field yang diizinkan yang bisa diisi massal. Filament sangat bergantung pada mass assignment, jadi $fillable wajib diatur.
 
-### Langkah-langkah beserta Bukti Screenshoot
+2. Apa fungsi $casts pada Laravel?
+$casts adalah properti yang mengubah tipe data dari database menjadi tipe data yang lebih mudah digunakan di PHP.
 
-**Langkah 1 – Membuat Model & Migration Category**
+Cast	                    Fungsi
+'tags' => 'array'	        JSON di database → array PHP
+'published' => 'boolean'	Integer 0/1 → true/false
+'published_at' => 'date'	String date → Carbon instance (bisa pakai ->format())
 
-Pertama, kita buat model Category beserta file migration-nya secara bersamaan menggunakan perintah artisan. Perintah `-m` akan otomatis membuat file migration.
+3. Apa perbedaan integer biasa dengan foreign key?
+Perbedaan utama antara integer biasa dan foreign key terletak pada validasi dan integritas data. Integer biasa hanya menyimpan angka tanpa validasi, bisa diisi nilai berapa pun (termasuk yang tidak valid), tidak mendukung cascade, dan contohnya seperti $table->integer('category_id'). Sedangkan foreign key menyimpan referensi ke tabel lain, memiliki validasi yang memastikan nilai benar-benar ada di tabel referensi, mendukung cascade (otomatis terhapus/terupdate), dan contohnya seperti $table->foreignId('category_id')->constrained(). Dengan kata lain, foreign key lebih aman untuk menjaga konsistensi data.
 
-```bash
-php artisan make:model Category -m
-Perintah ini akan menghasilkan dua file:
-
-app/Models/Category.php (file model)
-
-database/migrations/xxxx_xx_xx_xxxxxx_create_categories_table.php (file migration)
-
+4. Bagaimana jika category dihapus tetapi masih ada post?
+Tergantung pengaturan foreign key pada migration. Jika menggunakan onDelete('cascade'), post akan ikut terhapus. Jika menggunakan onDelete('set null'), category_id pada post akan menjadi NULL (field harus nullable). Jika tidak ada pengaturan cascade (default), maka akan muncul error karena masih ada post yang terkait. Pada praktikum ini, saya menggunakan onDelete('cascade') sehingga post otomatis terhapus jika category-nya dihapus.
