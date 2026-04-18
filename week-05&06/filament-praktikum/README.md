@@ -410,17 +410,22 @@ Tergantung pengaturan foreign key pada migration. Jika menggunakan onDelete('cas
 **Kelas:** TI-2F
 
 ### Langkah-langkah beserta bukti Screenshoot:
+
 <details>
-<summary> Langkah 1 – Membuat Resource Post</summary>
-1. php artisan make:filament-resource Post
-week-05&06/filament-praktikum/screenshoot/Screenshot 2026-04-10 192910.png
+<summary><h3>Langkah 1 – Membuat Resource Post</h3></summary>
+<br>
+
+![](week-05&06/filament-praktikum/screenshoot/Screenshot 2026-04-10 192910.png)
+
 </details>
 
 <details>
-<summary> Langkah 2 – Menu Posts di Sidebar</summary>
-2. Refresh browser http://localhost:8000/admin, menu Posts muncul di sidebar.
-week-05&06/filament-praktikum/screenshoot/Screenshot 2026-04-10 193417.png
-week-05&06/filament-praktikum/screenshoot/Screenshot 2026-04-10 194037.png
+<summary><h3>Langkah 2 – Menu Posts di Sidebar</h3></summary>
+<br>
+
+![](week-05&06/filament-praktikum/screenshoot/Screenshot 2026-04-10 193417.png)
+![](week-05&06/filament-praktikum/screenshoot/Screenshot 2026-04-10 194037.png)
+
 </details>
 
 
