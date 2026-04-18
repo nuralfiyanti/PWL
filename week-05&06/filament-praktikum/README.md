@@ -472,9 +472,60 @@ MarkdownEditor adalah editor berbasis teks dengan sintaks khusus, tanpa toolbar 
 
 ## Langkah Praktikum :
 ## Mengatur Layout Dasar dengan Columns
+![alt text](<Screenshot 2026-04-18 171130.png>)
+![alt text](<Screenshot 2026-04-18 170152.png>)
+![alt text](<Screenshot 2026-04-18 171149.png>)
+![alt text](<Screenshot 2026-04-18 172209.png>)
+## Menggunakan Section
+![alt text](<Screenshot 2026-04-18 183901.png>)
+![alt text](<Screenshot 2026-04-18 184900.png>)
+## Membuat Section Terpisah
+Section Image Upload
+![alt text](<Screenshot 2026-04-18 185403.png>)
+Section Meta Data
+![alt text](<Screenshot 2026-04-18 210011.png>)
+![alt text](<Screenshot 2026-04-18 210126.png>)
+![alt text](<Screenshot 2026-04-18 210308.png>)
+![alt text](<Screenshot 2026-04-18 210340.png>)
+## Menggunakan Group untuk Layout Horizontal
+![alt text](<Screenshot 2026-04-18 214850.png>)
+![alt text](<Screenshot 2026-04-18 214701.png>)
+![alt text](<Screenshot 2026-04-18 220220.png>)
+![alt text](<Screenshot 2026-04-18 220208.png>)
+## Mengatur Lebar Field Individual
+![alt text](<Screenshot 2026-04-18 222753.png>)
+![alt text](<Screenshot 2026-04-18 222805.png>)
+## Analisis & Diskusi
+1.Mengapa layout form penting dalam aplikasi admin? <br>
+Layout form sangat penting dalam aplikasi admin karena beberapa alasan. Pertama, form dengan layout yang rapi memudahkan admin dalam mengisi data karena field-field terorganisir dengan baik dan tidak terlihat berantakan. Kedua, layout yang baik dapat mengurangi kesalahan input karena admin bisa fokus pada satu bagian form dalam satu waktu. Ketiga, form yang terstruktur profesional memberikan kesan bahwa aplikasi tersebut berkualitas dan dapat dipercaya. Keempat, layout yang efisien dapat menghemat waktu pengguna karena field yang sering digunakan bisa ditempatkan di posisi strategis. Terakhir, dengan layout yang baik, form yang memiliki banyak field (seperti form post yang memiliki 10+ field) tetap terlihat rapi dan tidak membingungkan pengguna. <br>
 
-</blockquote>
+2.Apa perbedaan Section dan Group?  <br>
+Section dan Group memiliki perbedaan mendasar. Section adalah komponen yang menampilkan visual box dengan judul, deskripsi, dan icon. Section digunakan untuk mengelompokkan field-field yang memiliki tema atau kategori yang sama, misalnya "Post Details" untuk field utama dan "Meta Information" untuk field tambahan. Section akan terlihat jelas di form karena memiliki border dan judul.
+
+Sementara itu, Group adalah komponen yang digunakan untuk mengatur layout tanpa tampilan visual. Group tidak memiliki border, judul, atau icon. Fungsinya murni untuk mengatur posisi dan lebar field di dalam form, misalnya membagi beberapa field menjadi 2 kolom. Group berguna ketika kita ingin mengatur tata letak tanpa menambahkan elemen visual tambahan <br>
+
+3.Kapan kita menggunakan columnSpanFull()?  <br>
+columnSpanFull() digunakan ketika kita ingin suatu field atau section memenuhi seluruh lebar kolom yang tersedia. Contoh penggunaannya adalah pada field Body (konten artikel) di form Post. Field Body biasanya membutuhkan ruang yang lebar karena berisi editor teks panjang. Dengan menggunakan columnSpanFull(), field tersebut akan melintang dari ujung kiri ke ujung kanan form, tidak terbatas pada grid kolom tertentu.
+
+Penggunaan lainnya adalah ketika ada field yang membutuhkan perhatian khusus atau ingin ditampilkan secara menonjol, seperti field deskripsi panjang atau upload file yang memerlukan area luas. columnSpanFull() juga berguna ketika kita ingin membuat form yang responsif di mana field tertentu harus tampil full width di perangkat mobile. <br>
+
+
+4.Apa keuntungan sistem grid 12 kolom?  <br>
+Keuntungan utamanya adalah 12 dapat dibagi dengan mudah oleh angka 1, 2, 3, 4, 6, dan 12. Ini memungkinkan kita membuat berbagai kombinasi lebar kolom, misalnya:
+
+2 kolom sama lebar (6 + 6), 3 kolom sama lebar (4 + 4 + 4), Kolom besar dan kecil (8 + 4), Kolom utama dan sidebar (9 + 3), Form dengan rasio 2/3 - 1/3 (8 + 4)
+
+Selain itu, sistem grid 12 kolom sudah umum digunakan (seperti di Tailwind CSS, Bootstrap, Filament), sehingga developer tidak perlu belajar sistem baru. Grid ini juga responsif, artinya kita bisa mengatur berapa banyak kolom yang ditampilkan di berbagai ukuran layar (desktop, tablet, mobile). Dengan fleksibilitas ini, kita bisa membuat form yang rapi, proporsional, dan profesional tanpa perlu coding CSS manual. <br>
+
+
+</blockquote> 
 </details>
 
+<br>
+
+<details>
+<summary><h3>JOBSHEET 03</h3></summary>
+<br>
+<blockquote>
 
 
