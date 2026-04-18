@@ -411,21 +411,70 @@ Tergantung pengaturan foreign key pada migration. Jika menggunakan onDelete('cas
 
 ### Langkah-langkah beserta bukti Screenshoot:
 
+## LAPORAN PRAKTIKUM WEEK06
 <details>
-<summary><h3>Langkah 1 – Membuat Resource Post</h3></summary>
+<summary><h3>JOBSHEET 01</h3></summary>
 <br>
+<blockquote>
 
-![](week-05&06/filament-praktikum/screenshoot/Screenshot 2026-04-10 192910.png)
+## Langkah Praktikum :
+## Membuat Resource Post
+![alt text](<screenshoot/Screenshot 2026-04-10 192910.png>)
+![alt text](<screenshoot/Screenshot 2026-04-10 193417.png>)
+![alt text](<screenshoot/Screenshot 2026-04-10 194037.png>)
+## Implementasi Form Elements
+![alt text](<Screenshot 2026-04-08 175516.png>)
+![alt text](<screenshoot/Screenshot 2026-04-10 194243.png>)
+![alt text](<screenshoot/Screenshot 2026-04-10 194404.png>)
+![alt text](<screenshoot/Screenshot 2026-04-10 194557.png>)
+![alt text](<screenshoot/Screenshot 2026-04-10 194808.png>)
+![alt text](<screenshoot/Screenshot 2026-04-10 194952.png>)
+![alt text](<screenshoot/Screenshot 2026-04-10 195007.png>)
+![alt text](<screenshoot/Screenshot 2026-04-10 195821.png>)
+![alt text](<screenshoot/Screenshot 2026-04-10 195903.png>)
+![alt text](<screenshoot/Screenshot 2026-04-10 200225.png>)
+![alt text](<screenshoot/Screenshot 2026-04-10 200239.png>)
+![alt text](<screenshoot/Screenshot 2026-04-10 201149.png>)
+![alt text](<screenshoot/Screenshot 2026-04-10 201203.png>)
+![alt text](<screenshoot/Screenshot 2026-04-10 201506.png>)
+![alt text](<screenshoot/Screenshot 2026-04-10 203748.png>)
+![alt text](<screenshoot/Screenshot 2026-04-10 203803.png>)
+![alt text](<screenshoot/Screenshot 2026-04-10 203957.png>)
+![alt text](<screenshoot/Screenshot 2026-04-11 194259.png>)
+![alt text](<screenshoot/Screenshot 2026-04-11 194727.png>)
+## Menampilkan Data di Tabel
+![alt text](<screenshoot/Screenshot 2026-04-18 151737.png>)
+![alt text](<screenshoot/Screenshot 2026-04-18 145209.png>)
+![alt text](<screenshoot/Screenshot 2026-04-18 151342.png>)
+![alt text](<screenshoot/Screenshot 2026-04-18 151808.png>)
+![alt text](<screenshoot/Screenshot 2026-04-18 160202.png>)
 
+
+## Analisis & Diskusi
+1.Mengapa kita perlu storage:link?
+File yang diupload melalui form disimpan di direktori storage/app/public yang secara default tidak dapat diakses langsung oleh browser karena berada di luar folder public. Perintah storage:link membuat tautan simbolis (symlink) dari public/storage ke storage/app/public, sehingga file-file tersebut dapat diakses melalui URL publik seperti http://localhost:8000/storage/nama_file.jpg. Tanpa perintah ini, gambar yang diupload tidak akan muncul di halaman web.<br>
+2.Apa peran $casts pada field tags yang menggunakan TagsInput?
+Field tags pada database bertipe JSON. TagsInput di Filament menghasilkan data dalam bentuk array. Agar data array ini bisa disimpan ke database, diperlukan konversi ke format JSON. Dengan menambahkan 'tags' => 'array' di properti $casts model Post, Laravel akan secara otomatis: Mengubah array menjadi JSON saat menyimpan ke database, Mengubah JSON menjadi array saat mengambil data dari database, Ini memudahkan manipulasi data tag di sisi aplikasi.<br>
+3.Mengapa menggunakan category.name (bukan category_id) pada tabel?
+category_id yang tersimpan di database hanyalah berupa angka (foreign key) yang tidak informatif bagi pengguna. Dengan menggunakan category.name, kita memanfaatkan relasi Eloquent belongsTo yang telah didefinisikan di model Post. Filament akan secara otomatis mengambil data dari relasi tersebut dan menampilkan nama kategori, bukan ID-nya. Ini membuat tampilan tabel menjadi lebih mudah dipahami.<br>
+4.Perbedaan antara RichEditor dan MarkdownEditor
+RichEditor adalah editor WYSIWYG yang menampilkan hasil langsung seperti di Microsoft Word, dilengkapi toolbar untuk formatting, menyimpan output dalam format HTML (ukuran lebih besar), dan cocok untuk pengguna awam.
+
+MarkdownEditor adalah editor berbasis teks dengan sintaks khusus, tanpa toolbar (hanya preview), menyimpan output dalam format markdown (ukuran lebih kecil), dan lebih disukai developer karena hasilnya bersih dan fleksibel
+</blockquote>
 </details>
 
-<details>
-<summary><h3>Langkah 2 – Menu Posts di Sidebar</h3></summary>
 <br>
 
-![](week-05&06/filament-praktikum/screenshoot/Screenshot 2026-04-10 193417.png)
-![](week-05&06/filament-praktikum/screenshoot/Screenshot 2026-04-10 194037.png)
+<details>
+<summary><h3>JOBSHEET 02</h3></summary>
+<br>
+<blockquote>
 
+## Langkah Praktikum :
+## Mengatur Layout Dasar dengan Columns
+
+</blockquote>
 </details>
 
 
