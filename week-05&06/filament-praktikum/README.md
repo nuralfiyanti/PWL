@@ -453,14 +453,13 @@ Tergantung pengaturan foreign key pada migration. Jika menggunakan onDelete('cas
 ## Analisis & Diskusi
 1.Mengapa kita perlu storage:link?
 File yang diupload melalui form disimpan di direktori storage/app/public yang secara default tidak dapat diakses langsung oleh browser karena berada di luar folder public. Perintah storage:link membuat tautan simbolis (symlink) dari public/storage ke storage/app/public, sehingga file-file tersebut dapat diakses melalui URL publik seperti http://localhost:8000/storage/nama_file.jpg. Tanpa perintah ini, gambar yang diupload tidak akan muncul di halaman web.<br>
-2.Apa peran $casts pada field tags yang menggunakan TagsInput?
+2.Apa peran $casts pada field tags yang menggunakan TagsInput?<br>
 Field tags pada database bertipe JSON. TagsInput di Filament menghasilkan data dalam bentuk array. Agar data array ini bisa disimpan ke database, diperlukan konversi ke format JSON. Dengan menambahkan 'tags' => 'array' di properti $casts model Post, Laravel akan secara otomatis: Mengubah array menjadi JSON saat menyimpan ke database, Mengubah JSON menjadi array saat mengambil data dari database, Ini memudahkan manipulasi data tag di sisi aplikasi.<br>
-3.Mengapa menggunakan category.name (bukan category_id) pada tabel?
+3.Mengapa menggunakan category.name (bukan category_id) pada tabel?<br>
 category_id yang tersimpan di database hanyalah berupa angka (foreign key) yang tidak informatif bagi pengguna. Dengan menggunakan category.name, kita memanfaatkan relasi Eloquent belongsTo yang telah didefinisikan di model Post. Filament akan secara otomatis mengambil data dari relasi tersebut dan menampilkan nama kategori, bukan ID-nya. Ini membuat tampilan tabel menjadi lebih mudah dipahami.<br>
-4.Perbedaan antara RichEditor dan MarkdownEditor
-RichEditor adalah editor WYSIWYG yang menampilkan hasil langsung seperti di Microsoft Word, dilengkapi toolbar untuk formatting, menyimpan output dalam format HTML (ukuran lebih besar), dan cocok untuk pengguna awam.
-
-MarkdownEditor adalah editor berbasis teks dengan sintaks khusus, tanpa toolbar (hanya preview), menyimpan output dalam format markdown (ukuran lebih kecil), dan lebih disukai developer karena hasilnya bersih dan fleksibel
+4.Perbedaan antara RichEditor dan MarkdownEditor<br>
+RichEditor adalah editor WYSIWYG yang menampilkan hasil langsung seperti di Microsoft Word, dilengkapi toolbar untuk formatting, menyimpan output dalam format HTML (ukuran lebih besar), dan cocok untuk pengguna awam.<br>
+MarkdownEditor adalah editor berbasis teks dengan sintaks khusus, tanpa toolbar (hanya preview), menyimpan output dalam format markdown (ukuran lebih kecil), dan lebih disukai developer karena hasilnya bersih dan fleksibel.
 </blockquote>
 </details>
 
