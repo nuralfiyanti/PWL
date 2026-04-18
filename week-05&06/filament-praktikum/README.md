@@ -303,23 +303,7 @@ Tabel users di database menampilkan data user yang telah ditambahkan.
 Icon menu Users di sidebar telah diganti dengan icon baru dari Heroicons.
 ![alt text](<screenshoot/Screenshot 2026-03-29 044910.png>)
 
-### Kode Implementasi
-
-#### Validasi di `UserResource.php`
-
-```php
-TextInput::make('email')
-    ->email()
-    ->required()
-    ->unique(table: 'users', column: 'email') 
-    ->maxLength(255),
-
-TextInput::make('password')
-    ->password()
-    ->required()
-    ->minLength(6) 
-    ->maxLength(255),
-
+#
 ### Jobsheet 3: Membuat Migration, Model, Relasi & Resource Category
 
 ### Langkah Praktikum 
@@ -357,47 +341,47 @@ Edit migration Post menjadi:
 7. Buka:
 • app/Models/Post.php
 Tambahkan
-week-05&06/filament-praktikum/screenshoot/Screenshot 2026-04-08 134523.png
+![alt text](<screenshoot/Screenshot 2026-04-08 134523.png>)
 
 8. Menggunakan Casting Laravel
 Karena beberapa field memiliki tipe khusus, tambahkan: ( pada models/Post.php )
-week-05&06/filament-praktikum/screenshoot/Screenshot 2026-04-08 144401.png
+![alt text](<screenshoot/Screenshot 2026-04-08 144401.png>)
 
 9. Menambahkan Relasi ( pada model/Post.php )
 Tambahkan relasi ke Category:
-week-05&06/filament-praktikum/screenshoot/Screenshot 2026-04-08 144411.png
+![alt text](<screenshoot/Screenshot 2026-04-08 144411.png>)
 
 10. G. Membuat Resource Category di Filament
 Karena kita akan menggunakan Category untuk relasi Post, maka kita buat resource-nya terlebih 
 dahulu.
 • php artisan make:filament-resource Category
-week-05&06/filament-praktikum/screenshoot/Screenshot 2026-04-08 160150.png
+![alt text](<screenshoot/Screenshot 2026-04-08 160150.png>)
 
 11. Jalankan browser maka akan muncul pada sidebar categories :
-week-05&06/filament-praktikum/screenshoot/Screenshot 2026-04-08 172929.png
+![alt text](<screenshoot/Screenshot 2026-04-08 172929.png>)
 
 12. Edit Form Category
 Buka:
 • CategoryForm.php
 Tambahkan:
-week-05&06/filament-praktikum/screenshoot/Screenshot 2026-04-08 174012.png
+![alt text](<screenshoot/Screenshot 2026-04-08 174012.png>)
 
 13. Jalankan browser :
 Sebelum
-week-05&06/filament-praktikum/screenshoot/Screenshot 2026-04-08 174631.png
-
+![alt text](<screenshoot/Screenshot 2026-04-08 174631.png>)
+ 
 Sesudah
-week-05&06/filament-praktikum/screenshoot/Screenshot 2026-04-08 174135.png
+![alt text](<screenshoot/Screenshot 2026-04-08 174135.png>)
 
 14. Edit Table Category
 Buka:
 • CategoriesTable.php
 Tambahkan:
-week-05&06/filament-praktikum/screenshoot/Screenshot 2026-04-08 175539.png
+![alt text](<screenshoot/Screenshot 2026-04-08 175539.png>)
 
 15. Jalankan browser
-week-05&06/filament-praktikum/screenshoot/Screenshot 2026-04-08 175714.png
-week-05&06/filament-praktikum/screenshoot/Screenshot 2026-04-08 202227.png
+![alt text](<screenshoot/Screenshot 2026-04-08 175714.png>)
+![alt text](<screenshoot/Screenshot 2026-04-08 202227.png>)
 
 
 ### Jawaban Analisis & Diskusi
@@ -417,3 +401,27 @@ Perbedaan utama antara integer biasa dan foreign key terletak pada validasi dan 
 
 4. Bagaimana jika category dihapus tetapi masih ada post?
 Tergantung pengaturan foreign key pada migration. Jika menggunakan onDelete('cascade'), post akan ikut terhapus. Jika menggunakan onDelete('set null'), category_id pada post akan menjadi NULL (field harus nullable). Jika tidak ada pengaturan cascade (default), maka akan muncul error karena masih ada post yang terkait. Pada praktikum ini, saya menggunakan onDelete('cascade') sehingga post otomatis terhapus jika category-nya dihapus.
+
+## Jobsheet 6: Implementasi Form Elements & Resource Post di Filament
+
+
+**Nama:** Nur Alfiyanti
+**NIM:** 244107020055
+**Kelas:** TI-2F
+
+### Langkah-langkah beserta bukti Screenshoot:
+<details>
+<summary> Langkah 1 – Membuat Resource Post</summary>
+1. php artisan make:filament-resource Post
+week-05&06/filament-praktikum/screenshoot/Screenshot 2026-04-10 192910.png
+</details>
+
+<details>
+<summary> Langkah 2 – Menu Posts di Sidebar</summary>
+2. Refresh browser http://localhost:8000/admin, menu Posts muncul di sidebar.
+week-05&06/filament-praktikum/screenshoot/Screenshot 2026-04-10 193417.png
+week-05&06/filament-praktikum/screenshoot/Screenshot 2026-04-10 194037.png
+</details>
+
+
+
