@@ -528,4 +528,56 @@ Selain itu, sistem grid 12 kolom sudah umum digunakan (seperti di Tailwind CSS, 
 <br>
 <blockquote>
 
+## Langkah Praktikum :
+## Menambahkan Validasi
+Menggunakan Method required()
+![alt text](<Screenshot 2026-04-19 071240.png>)
+![alt text](<Screenshot 2026-04-19 071714.png>)
+Menggunakan rule()
+![alt text](<Screenshot 2026-04-19 071937.png>)
+![alt text](<Screenshot 2026-04-19 074618.png>)
+Menggunakan rules() (Multiple Validation)
+![alt text](<Screenshot 2026-04-19 074721.png>)
+![alt text](<Screenshot 2026-04-19 075040.png>)
+![alt text](<Screenshot 2026-04-19 075242.png>)
+![alt text](<Screenshot 2026-04-19 080434.png>)
+![alt text](<Screenshot 2026-04-19 080311.png>)
+## Validasi Unique
+![alt text](<Screenshot 2026-04-19 081104.png>)
+![alt text](<Screenshot 2026-04-19 081119.png>)
+## Mengganti Pesan Error (Custom Message)
+![alt text](<Screenshot 2026-04-19 081744.png>)
+![alt text](<Screenshot 2026-04-19 081827.png>)
+## Contoh Validasi Lengkap Post
+![alt text](<Screenshot 2026-04-19 083336.png>)
+##  Jenis Validasi yang Bisa Digunakan
+Karena berbasis Laravel, kita bisa menggunakan:
+Rule            Fungsi
+required        Wajib diisi
+min             Minimal karakter
+max             Maksimal karakter
+email           Format email
+numeric         Hanya angka
+boolean         True/False
+unique          Tidak boleh duplikat
+date            Format tanggal
+after           Tanggal setelah
+confirmed       Konfirmasi password
+
+Dokumentasi lengkap tersedia di Laravel Validation.
+## Perbedaan rule() vs required()
+Method                  Keterangan
+required()              Shortcut validasi wajib isi
+rule()                  Untuk 1 rule saja
+rules()                 Untuk banyak rule
+validationMessages()    Mengubah pesan error
+## Analisis & Diskusi
+1. Mengapa validasi penting pada admin panel? <br>
+Agar data yang masuk ke database valid dan aman. Tanpa validasi, admin bisa salah input atau bahkan ada yang sengaja masukin data berbahaya. Validasi juga ngasih tahu admin kalau ada field yang salah, jadi langsung bisa diperbaiki. <br>
+2. Apa perbedaan validasi client-side dan server-side? <br>
+Client-side jalan di browser pakai JavaScript, cepat dan enak buat pengguna, tapi gak aman karena bisa dimatiin. Server-side jalan di server pakai PHP, lebih lambat dikit tapi aman karena gak bisa dilewati. Filament pakai server-side karena lebih aman. <br>
+3. Mengapa unique otomatis bekerja saat edit data? <br>
+Filament secara otomatis mengenali bahwa kita sedang mengedit data yang sudah ada, bukan membuat data baru. Saat menggunakan method unique() pada field slug, Filament akan mengecualikan record yang sedang diedit dari pengecekan unique. Artinya, jika kita mengedit post dengan slug "belajar-laravel" dan tidak mengubah slug tersebut, maka validasi unique akan tetap lolos karena slug tersebut milik record yang sama. Filament melakukan ini secara otomatis di balik layar dengan parameter ignoreRecord: true. Jika ingin mengatur secara manual, kita bisa menambahkan ->unique(ignoreRecord: true). <br>
+4. Kapan kita perlu menggunakan rules array dibanding string? <br>
+Rules string ('required|min:3') dipakai kalau aturannya sederhana. Rules array (['required', 'min:3']) dipakai kalau aturannya kompleks, misalnya butuh aturan in: atau validasi custom. Intinya, array lebih fleksibel. <br>
 

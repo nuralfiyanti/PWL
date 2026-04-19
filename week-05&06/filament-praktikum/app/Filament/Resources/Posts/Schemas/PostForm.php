@@ -29,8 +29,14 @@ class PostForm
 
                     //grouping fields into 2 columns
                     Group::make([
-                        TextInput::make("title"),
-                        TextInput::make("slug"),
+                        TextInput::make("title")
+                             ->rules("required | min:3 | max:10"),
+                        TextInput::make("slug")
+                        -> rules("required")
+                        -> unique()
+                        -> validationMessages([
+                            "unique" => "Slug must be unique"
+                        ]),
                         Select::make("category_id")
                             ->relationship("category", "name")
                             ->preload()
@@ -48,6 +54,7 @@ class PostForm
                     Section::make("Image Upload")
                         ->schema([
                             FileUpload::make("image")
+                                ->required()
                                 ->disk("public")
                                 ->directory("posts")
                         ]),
