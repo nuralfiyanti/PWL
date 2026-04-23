@@ -82,3 +82,63 @@ Tidak, wizard tidak cocok untuk semua jenis form. COCOK untuk: form panjang (10+
 
 <br>
 
+## Jobsheet 8 : Implementasi Info List (View Page) di Filament
+
+### Langkah-langkah beserta bukti Screenshoot:
+
+## LAPORAN PRAKTIKUM WEEK07 
+<details>
+<summary><h3>JOBSHEET 02</h3></summary>
+<br>
+<blockquote>
+
+## Langkah Praktikum :
+## Mengedit Product Info List 
+![alt text](<Screenshot 2026-04-23 185758.png>)
+## Membuat Section – Product Info 
+![alt text](<Screenshot 2026-04-23 191528.png>)
+Tampilan Section Product Info <br>
+![alt text](<Screenshot 2026-04-23 192427.png>)
+## Section – Pricing & Stock
+![alt text](<Screenshot 2026-04-23 192833.png>)
+Hasil: <br>
+• Price memiliki icon dolar <br>
+• Stock ditampilkan dalam format teks <br>
+![alt text](<Screenshot 2026-04-23 192926.png>)
+## Section – Media & Status
+![alt text](<Screenshot 2026-04-24 032208.png>)
+![alt text](<Screenshot 2026-04-24 032200.png>)
+![alt text](<Screenshot 2026-04-24 032141.png>)
+![alt text](<Screenshot 2026-04-24 032041.png>)
+## Menampilkan Status Boolean
+![alt text](<Screenshot 2026-04-24 032804.png>)
+![alt text](<Screenshot 2026-04-24 032748.png>)
+Menampilkan Tanggal dengan Format <br>
+![alt text](<Screenshot 2026-04-24 033245.png>)
+![alt text](<Screenshot 2026-04-24 033232.png>)
+
+##  Analisis & Diskusi
+
+1. Mengapa View Page tidak cocok menggunakan form input? <br>
+View Page (halaman rincian data) pada dasarnya dirancang khusus dengan sifat *Read-Only* atau hanya untuk dilihat saja. Jika kita memakai komponen form input (seperti kolom ketik bebas atau dropdown) di halaman ini, hal tersebut dapat memicu kebingungan (*bad UX*). Pengguna secara psikologis akan mengira bahwa data tersebut bisa langsung diketik dan diubah di situ, lalu mereka akan kebingungan mencari tombol simpan. Sebaiknya, biarkan fungsi lihat data menggunakan teks statis (seperti `TextEntry`), sedangkan form input dikhususkan hanya untuk halaman *Create* atau *Edit*. <br>
+
+2. Apa perbedaan TextColumn dan TextEntry? <br>
+TextColumn dan TextEntry:
+TextColumn biasa digunakan ketika kita menampilkan data dalam format Tabel (misal: di halaman List Filament), sedangkan TextEntry ditujukan untuk menampilkan informasi berformat teks di dalam Infolist dalam Infolist (halaman rincian View suatu data spesifik). <br>
+
+3. Kapan kita menggunakan badge? <br>
+Cocok disisipkan ketika kita ingin menyoroti atau menegaskan suatu status atau label penting (contoh: Status Pesanan "Dibatalkan" / "Sukses"). Pewarnaan pada Badge membuat mata pengguna secara cepat menangkap nilai dari status tersebut, tanpa menghabiskan banyak waktu membaca teks.<br>
+
+4. Apa keuntungan menggunakan IconEntry untuk boolean? <br>
+IconEntry untuk tipe boolean:
+Lebih baik secara estetika visual. Menampilkan icon seperti ceklis hijau (True/Aktif) atau silang merah (False/Tidak Aktif) sangat kental akan intuitivitas dibanding melempar teks berupa "1/0" atau "True/False" yang kaku dan menghambat user experience.<br>
+
+</blockquote>
+</details>
+
+<br>
+
+
+
+
+
