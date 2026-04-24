@@ -138,7 +138,63 @@ Lebih baik secara estetika visual. Menampilkan icon seperti ceklis hijau (True/A
 
 <br>
 
+## Jobsheet  9 : Implementasi Tabs pada Info List di Filament
 
+### Langkah-langkah beserta bukti Screenshoot:
 
+## LAPORAN PRAKTIKUM WEEK07 
+<details>
+<summary><h3>JOBSHEET 03</h3></summary>
+<br>
+<blockquote>
 
+##  Mengubah Section Menjadi Tabs 
+Buka file: <br>
+• ProductInfolist.php <br>
+Ganti struktur Section menjadi Tabs. <br>
+##  Implementasi Tabs 
+1. Tab Product Info <br>
+![alt text](<Screenshot 2026-04-24 055020.png>)
+![alt text](<Screenshot 2026-04-24 055647.png>)
+2. Tab Pricing & Stock <br>
+![alt text](<Screenshot 2026-04-24 111229.png>)
+![alt text](<Screenshot 2026-04-24 111116.png>)
+3. Tab Media & Status <br>
+![alt text](<Screenshot 2026-04-24 113930.png>)
+## Tampilan Tabs Horizontal
+![alt text](<Screenshot 2026-04-24 114133.png>)
+![alt text](<Screenshot 2026-04-24 114232.png>)
+## Mengubah Tabs Menjadi Vertical 
+Tambahkan method: <br>
+• ->vertical() <br>
+Contoh: <br>
+• Tabs::make('Product Tabs') ->vertical() <br>
+![alt text](<Screenshot 2026-04-24 114536.png>)
+![alt text](<Screenshot 2026-04-24 114500.png>)
 
+## Analisis & Diskusi 
+1. Kapan kita menggunakan Tabs dibanding Section? <br> 
+Tabs saat informasi yang ada punya kategori yang berbeda-beda dan user tidak perlu melihat semuanya di waktu yang bersamaan. Misalnya, tab satu untuk "Detail Spesifikasi", tab dua untuk "Harga & Stok", dan tab tiga untuk "Ulasan".
+Section saat informasinya saling berkaitan erat dan user butuh melihat semuanya secara berurutan atau membandingkannya. Section bagus untuk menyusun informasi vertikal agar flow / alur bacanya mulus sambil di-scroll (misalnya data "Nama Pendaftar" di atas, diikuti section "Alamat" di bawahnya). <br>
+
+2. Apa kelebihan Tabs untuk data panjang? <br>
+Menghemat ruang layar: Halaman tidak akan memanjang ke bawah, sehingga terlihat jauh lebih rapi dan ringkas.
+Mencegah pengguna "mabuk" informasi (Cognitive Overload): Kalau pengguna disuguhi 50 baris data sekaligus, mereka akan pusing. Dengan tabs, pengguna bisa fokus mencerna data "potongan demi potongan" sesuai tab yang mereka klik.
+Mengurangi capek scroll: Pekerjaan admin jadi lebih cepat karena tinggal klik judul tab (navigasi langsung) ketimbang harus scroll ke bawah mencari informasi yang diselip di tengah-tengah. <br>
+
+3. Apakah Tabs bisa digunakan pada Form juga? <br>
+bisa, Di filament (dan banyak framework lainnya), pemakaian Tabs pada Form (saat Create/Edit data) justru sangat disarankan untuk form yang menjuntai panjang.
+
+Contohnya saat membuat sebuah Produk baru:
+Daripada admin melihat 20 kolom isian memanjang ke bawah yang bikin malas ngisinya, lebih baik dibagi:
+
+Tab "Info Dasar" (Nama, Deskripsi)
+Tab "Media" (Upload Foto)
+Tab "Sistem Pengiriman" (Berat, Ukuran Dimensi)
+Ini bikin proses input data terasa lebih ringan dan terorganisir. <br>
+
+4. Bagaimana jika tab terlalu banyak? <br>
+Kelompokkan Ulang (Grouping): Gabungkan beberapa tab kecil menjadi satu tab, lalu pisahkan isinya menggunakan Section di dalam tab tersebut.
+Gunakan Tab Vertikal: Ubah posisi tab memanjang di atas (horizontal) menjadi di samping kiri/kanan (vertikal) agar lebih rapi menampung banyak baris.
+Pisahkan Detail Relasi: Jika tumpukan tab itu berisi tabel data tambahan, keluarkan dari sistem tab dan taruh saja di bagian bawah halaman utama (sebagai Relation Managers).
+Ganti Menjadi Wizard: Khusus untuk form input, jika datanya wajib diisi secara berurutan, ubah tab menjadi Wizard/Stepper (Langkah 1, Langkah 2, dst). <br>
