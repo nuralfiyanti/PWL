@@ -14,34 +14,35 @@
 
 ## Langkah Praktikum :
 ## Relasi Category dan Post
-![alt text](<screenshoot/Screenshot 2026-06-01 165347.png>)
+![alt text](<screenshoot/Screenshot 2026-06-01 165347.png>) <br>
 ## Implementasi Relationship pada Form
 Tambahkan kode dan comment kode preload <br>
-![alt text](<screenshoot/Screenshot 2026-06-01 165347.png>)
+![alt text](<screenshoot/Screenshot 2026-06-01 164924.png>) <br>
 Parameter  :  Fungsi <br>
 category   -  nama relasi pada model <br>
 name       -  field yang ditampilkan <br>
 ## Membuat Dropdown Searchable
 Jika kategori sangat banyak, gunakan fitur pencarian: <br>
-![alt text](<screenshoot/Screenshot 2026-06-01 165347.png>)Hasil Dropdown kategori:<br>
+![alt text](<screenshoot/Screenshot 2026-06-01 165347.png>) <br>
+Hasil Dropdown kategori:<br>
 • Bisa dicari <br>
 • Lebih cepat untuk dataset besar <br>
 • Tidak perlu memuat semua data sekaligus <br>
-![alt text](<screenshoot/Screenshot 2026-06-01 173044.png>)
+![alt text](<screenshoot/Screenshot 2026-06-01 173044.png>) <br>
 ## Relationship pada Model
 Pastikan relasi sudah dibuat pada model. <br>
 Model post <br>
-![alt text](<screenshoot/Screenshot 2026-06-01 173303.png>)
+![alt text](<screenshoot/Screenshot 2026-06-01 173303.png>) <br>
 Model category <br>
-![alt text](<screenshoot/Screenshot 2026-06-01 173541.png>)
+![alt text](<screenshoot/Screenshot 2026-06-01 173541.png>) <br>
 ## Menampilkan Data Relasi pada Table
 Pada Post Table: <br>
 • TextColumn::make('category.name') <br>
-![alt text](<screenshoot/Screenshot 2026-06-01 173926.png>)
+![alt text](<screenshoot/Screenshot 2026-06-01 173926.png>) <br>
 Hasil Tabel akan menampilkan: <br>
-![alt text](<screenshoot/Screenshot 2026-06-01 183336.png>)
-![alt text](<screenshoot/Screenshot 2026-06-01 175021.png>)
-![alt text](<screenshoot/Screenshot 2026-06-01 183059.png>)
+![alt text](<screenshoot/Screenshot 2026-06-01 183336.png>) <br>
+![alt text](<screenshoot/Screenshot 2026-06-01 175021.png>) <br>
+![alt text](<screenshoot/Screenshot 2026-06-01 183059.png>) <br>
 ## Membuat Relationship Manage
 Filament menyediakan fitur Relationship Manager untuk mengelola relasi langsung dari 
 resource. <br>
@@ -50,17 +51,17 @@ Isi parameter: <br>
 • Resource : CategoryResource <br>
 Relationship : posts <br>
 Title Column : title <br>
-![alt text](<screenshoot/Screenshot 2026-06-01 184025.png>)
+![alt text](<screenshoot/Screenshot 2026-06-01 184025.png>) <br>
 File yang Dibuat <br>
 CategoryResource <br>
 └── RelationManagers <br>
  └── PostsRelationManager.php <br>
- ![alt text](<screenshoot/Screenshot 2026-06-01 184147.png>)
+ ![alt text](<screenshoot/Screenshot 2026-06-01 184147.png>) <br>
 ## Menghubungkan Relationship Manager
 Buka: CategoryResource.php, Tambahkan pada method: <br>
-![alt text](<screenshoot/Screenshot 2026-06-01 184810.png>)
+![alt text](<screenshoot/Screenshot 2026-06-01 184810.png>) <br>
 Buka model -> Category.php dan tambahkan kode berikut <br>
-![alt text](<screenshoot/Screenshot 2026-06-01 173541.png>)
+![alt text](<screenshoot/Screenshot 2026-06-01 173541.png>) <br>
 ## Hasil Relationship Manager
 Saat membuka Edit Category, akan muncul tabel Post yang berelasi. <br>
 Fitur yang tersedia: <br>
@@ -68,20 +69,20 @@ Fitur yang tersedia: <br>
 • Create Post <br>
 • Edit Post <br>
 • Delete Post <br>
-![alt text](<screenshoot/Screenshot 2026-06-01 185938.png>)
+![alt text](<screenshoot/Screenshot 2026-06-01 185938.png>) <br>
 ## Menambahkan Kolom pada Relationship Table
-![alt text](<screenshoot/Screenshot 2026-06-01 191049.png>)
+![alt text](<screenshoot/Screenshot 2026-06-01 191049.png>) <br>
 Hasil Tabel Post di Category akan menampilkan: <br>
-![alt text](<screenshoot/Screenshot 2026-06-01 191353.png>)
+![alt text](<screenshoot/Screenshot 2026-06-01 191353.png>) <br>
 ## Membuat Form Create Post pada Relationship
 Pada Relationship Manager: <br>
-![alt text](<screenshoot/Screenshot 2026-06-01 193646.png>)
+![alt text](<screenshoot/Screenshot 2026-06-01 193646.png>) <br>
 Saat membuat post baru dari kategori: <br>
 • category_id otomatis terisi <br>
 • tidak perlu memilih kategori lagi <br>
-![alt text](<screenshoot/Screenshot 2026-06-01 194031.png>)
+![alt text](<screenshoot/Screenshot 2026-06-01 194031.png>) <br>
 ## Keuntungan Menggunakan Relationship Manager
-![alt text](<screenshoot/Screenshot 2026-06-01 194207.png>)
+![alt text](<screenshoot/Screenshot 2026-06-01 194207.png>) <br>
 ## Analisis & Diskusi
 1. **Apa perbedaan relationship() dengan options()?** <br>
    - **relationship()**: Mengambil data langsung dari database menggunakan relasi Eloquent. Data diambil secara real-time sesuai relasi yang didefinisikan pada Model. Cocok untuk dataset besar karena bisa menggunakan pagination dan lazy loading.
