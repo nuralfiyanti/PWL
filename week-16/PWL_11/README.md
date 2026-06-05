@@ -127,3 +127,61 @@ logout <br>
 ![alt text](<screenshoot/Screenshot 2026-06-05 120920.png>) <br>
 26. Lakukan git commit untuk implementasi fitur logout sebagai penanda bahwa 
 praktikum 1 telah selesai dilakukan. <br>
+
+## Praktikum 2: CRUD dalam RESTful API
+## Pada praktikum ini, anda akan membangun CRUD dalam API dengan memanfaatkan route apiResource dan controller resource pada Laravel.
+1. Buatlah migration untuk mendefinisikan tabel todos. Tabel ini digunakan untuk 
+menyimpan informasi data todo masing-masing user. Jalankan perintah berikut <br>
+![alt text](<screenshoot/Screenshot 2026-06-05 123420.png>) <br>
+2. Lengkapi fungsi up pada migration todos dengan kode berikut <br>
+![alt text](<screenshoot/Screenshot 2026-06-05 124322.png>) <br>
+3. Lengkapi juga fungsi down untuk membalik proses pembuatan tabel todos <br>
+![alt text](<screenshoot/Screenshot 2026-06-05 124638.png>) <br>
+4. Buatlah controller dan model untuk melayani CRUD data todo dari seorang user. Jalankan 
+perintah artisan berikut. Flag --api digunakan untuk menyatakan bahwa resource 
+controller yang dibuat merupakan api. <br>
+![alt text](<screenshoot/Screenshot 2026-06-05 125009.png>) <br>
+5. Buka model Todo dan lengkapi definisi relasi dengan model User. Lengkapi atribut fillable. 
+Informasi kolom user_id tidak dibutuhkan sehingga perlu disembunyikan dari response. 
+Dikarenakan representasi tipe data boolean pada database bernilai angka (0 dan 1), 
+tambahkan casting atribut done dengan boolean. Hasil akhir kode dapat anda lihat 
+sebagai berikut. <br>
+![alt text](<screenshoot/Screenshot 2026-06-05 131557.png>) <br>
+6. Tambahkan fungsi todos pada model User yang menyatakan relasi dengan model Todo. Perhatikan kode berikut. <br>
+![alt text](<screenshoot/Screenshot 2026-06-05 131900.png>) <br>
+7. Untuk memudahkan proses validasi, buatlah custom request. Jalankan perintah berikut <br>
+![alt text](<screenshoot/Screenshot 2026-06-05 132056.png>) <br>
+8. Ubah parent/base class dari TodoRequest menjadi ApiRequest. <br>
+![alt text](<screenshoot/Screenshot 2026-06-05 132650.png>) <br>
+9. Lengkapi fungsi authorize sehingga hanya bisa mengijinkan request jika http method 
+menggunakan POST atau perubahan todo dilakukan oleh pemilik todo. Perhatikan kode 
+berikut. <br>
+![alt text](<screenshoot/Screenshot 2026-06-05 132831.png>) <br>
+10. Lengkapi juga fungsi rules dalam TodoRequest menjadi seperti berikut. <br>
+![alt text](<screenshoot/Screenshot 2026-06-05 132950.png>) <br>
+11. Pada proses CRUD pada resource, ada kalanya resource tersebut tidak ditemukan. Untuk 
+memastikan bahwa respon yang dikembalikan dalam format API, modifikasi penanganan 
+exception untuk mengembalikan respon json jika pemanggilan dilakukan pada API. Ubah 
+file Handler.php pada app/Exceptions/Handler.php dan override fungsi render. 
+Perhatikan kode berikut.<br>
+![alt text](<screenshoot/Screenshot 2026-06-05 141000.png>) <br>
+12. Buka file Api\TodoController.php, kemudian tambahkan trait ApiResponse <br>
+![alt text](<screenshoot/Screenshot 2026-06-05 141449.png>) <br>
+13. Lengkapi proses untuk melakukan CRUD pada resource Todo. Logika untuk melakukan 
+CRUD pada RESTful tidak ada perbedaan. Yang membedakan hanyalah respon berupa 
+json bukan format html lagi. Sehingga konsep-konsep yang sebelumnya telah dipelajari 
+dapat diaplikasikan juga dalam RESTful API. Perhatikan kode berikut untuk implementasi 
+akhir CRUD pada resource Todo <br>
+![alt text](<screenshoot/Screenshot 2026-06-05 141929.png>) <br>
+![alt text](<screenshoot/Screenshot 2026-06-05 142147.png>) <br>
+14. Tambahkan route resource pada route/api.php. Gunakan apiResource untuk 
+melakukan penambahan route. <br>
+![alt text](<screenshoot/Screenshot 2026-06-05 142537.png>) <br>
+15. Buka aplikasi postman dan lakukan percobaan pada CRUD yang telah diselesaikan. Jangan 
+lupa melakukan git commit. <br>
+![alt text](<screenshoot/Screenshot 2026-06-05 155659.png>) <br>
+![alt text](<screenshoot/Screenshot 2026-06-05 160318.png>) <br>
+![alt text](<screenshoot/Screenshot 2026-06-05 160416.png>) <br>
+![alt text](<screenshoot/Screenshot 2026-06-05 160516.png>) <br>
+![alt text](<screenshoot/Screenshot 2026-06-05 160625.png>) <br>
+![alt text](<screenshoot/Screenshot 2026-06-05 160725.png>) <br>
